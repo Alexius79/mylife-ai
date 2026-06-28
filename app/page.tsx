@@ -10,20 +10,23 @@ export default function Home() {
       <Header />
 
       <section className="flex h-full flex-col px-7 pb-[104px] pt-[92px]">
-        <div className="mt-[34vh]">
-          <h1 className="text-[22px] font-semibold leading-tight tracking-tight text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.65)]">
+        <div className="pt-6">
+          <h1 className="text-[21px] font-semibold leading-tight tracking-tight text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]">
             Hallo <span className="text-emerald-400">Alex</span>,
             <br />
-            wie geht es dir heute?
+            was hast du auf dem Herzen?
           </h1>
 
-          <p className="mt-2 text-[12px] leading-snug text-zinc-200 drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]">
+          <p className="mt-2 text-[12px] leading-snug text-zinc-100 drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
             Dein Raum. Deine Gedanken. Deine Entwicklung.
           </p>
         </div>
 
-        <div className="mt-6 space-y-4">
+        <div className="flex flex-1 items-center">
           <VoiceButton />
+        </div>
+
+        <div className="mb-4">
           <MoodSelector />
         </div>
       </section>
