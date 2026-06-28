@@ -7,9 +7,9 @@ import VoiceButton from "@/components/VoiceButton";
 export default function Home() {
   return (
     <AppLayout variant="home">
-      <Header />
+      <Header subtitle="Dein Raum. Deine Gedanken. Deine Entwicklung." />
 
-      <section className="grid h-full grid-rows-[27%_35%_38%] px-7 pb-[118px] pt-[96px]">
+      <section className="grid h-full grid-rows-[27%_35%_38%] px-7 pb-[118px] pt-[112px]">
         <div className="flex flex-col justify-start pt-2">
           <h1 className="text-[20px] font-semibold leading-tight tracking-tight text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]">
             <span className="typing-line typing-line-1">
@@ -20,10 +20,6 @@ export default function Home() {
               was hast du auf dem Herzen?
             </span>
           </h1>
-
-          <p className="mt-2 animate-[fadeIn_0.8s_ease-out_1.8s_both] text-[12px] leading-snug text-zinc-100 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
-            Dein Raum. Deine Gedanken. Deine Entwicklung.
-          </p>
         </div>
 
         <div className="flex items-center justify-center">
@@ -41,17 +37,6 @@ export default function Home() {
         @keyframes typing {
           from { width: 0; }
           to { width: 100%; }
-        }
-
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(8px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
         }
 
         .typing-line {

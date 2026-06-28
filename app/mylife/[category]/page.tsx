@@ -4,6 +4,7 @@ import BackButton from "@/components/BackButton";
 import BottomNavigation from "@/components/BottomNavigation";
 import Header from "@/components/Header";
 import { categories } from "@/data/categories";
+import { MicIcon } from "@/components/icons";
 import { notFound } from "next/navigation";
 
 type CategoryPageProps = {
@@ -36,7 +37,17 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
           {currentCategory.description}
         </p>
 
-        <div className="mt-8 rounded-3xl bg-white/[0.06] p-6">
+        <Link
+          href={`/new-entry?category=${currentCategory.id}`}
+          className="mt-7 flex w-full items-center justify-center gap-4 rounded-[28px] bg-emerald-400 px-6 py-4 font-semibold text-black shadow-[0_0_26px_rgba(52,211,153,0.35)]"
+        >
+          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-black/20">
+            <MicIcon className="h-6 w-6 text-black" />
+          </span>
+          Neuer Voice-Eintrag
+        </Link>
+
+        <div className="mt-7 rounded-3xl bg-white/[0.06] p-6">
           <h2 className="text-xl font-semibold text-emerald-400">
             Zusammenfassung
           </h2>
@@ -55,13 +66,6 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             Noch keine Dokumente vorhanden.
           </p>
         </div>
-
-        <Link
-          href={`/new-entry?category=${currentCategory.id}`}
-          className="mt-6 block w-full rounded-2xl bg-emerald-400 px-6 py-3 text-center font-semibold text-black"
-        >
-          Neuer Voice-Eintrag
-        </Link>
       </section>
 
       <BottomNavigation active="mylife" />

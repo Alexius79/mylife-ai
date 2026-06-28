@@ -5,7 +5,7 @@ export default function VoiceButton() {
   return (
     <Link
       href="/new-entry"
-      className="mx-auto flex w-full max-w-[340px] animate-[voiceIn_0.75s_ease-out_2.1s_both] items-center justify-center gap-4 rounded-[24px] border border-emerald-300/80 bg-black/15 px-5 py-4 shadow-[0_0_22px_rgba(52,211,153,0.22)] backdrop-blur-[1px]"
+      className="mx-auto flex w-full max-w-[340px] animate-[voiceIn_0.75s_ease-out_2.1s_both] items-center justify-center gap-4 rounded-[24px] border border-emerald-300/80 bg-black/45 px-5 py-4 shadow-[0_0_22px_rgba(52,211,153,0.22)] backdrop-blur-[2px]"
     >
       <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-emerald-400 shadow-[0_0_22px_rgba(52,211,153,0.45)]">
         <MicIcon className="h-6 w-6 text-white" />
