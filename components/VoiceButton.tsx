@@ -5,13 +5,17 @@ export default function VoiceButton() {
   return (
     <Link
       href="/new-entry"
-      className="mt-5 flex w-full items-center gap-5 rounded-[28px] border border-emerald-300/80 bg-emerald-500/12 px-6 py-4 shadow-[0_0_24px_rgba(52,211,153,0.28)]"
+      className="flex w-full items-center gap-4 rounded-[24px] border border-emerald-300/80 bg-black/35 px-5 py-4 shadow-[0_0_22px_rgba(52,211,153,0.22)] backdrop-blur-md"
     >
-      <MicIcon className="h-9 w-9 shrink-0 text-white" />
+      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-emerald-300/70 bg-emerald-400/10">
+        <MicIcon className="h-6 w-6 text-white" />
+      </div>
 
       <div className="text-left">
-        <div className="text-[24px] font-bold leading-none">Ich höre zu</div>
-        <div className="mt-2 text-[14px] text-zinc-200">
+        <div className="text-[19px] font-semibold leading-none text-white">
+          Ich höre zu
+        </div>
+        <div className="mt-1.5 text-[12px] leading-snug text-zinc-300">
           Erzähle, was du auf dem Herzen hast.
         </div>
       </div>
