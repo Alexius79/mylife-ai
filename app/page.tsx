@@ -9,31 +9,29 @@ export default function Home() {
     <AppLayout>
       <Header />
 
-      <section className="relative h-full px-7 pb-[104px] pt-[96px]">
-
-        {/* Überschrift */}
-        <div className="absolute left-7 right-7 top-[76px]">
-          <h1 className="text-[20px] font-semibold leading-tight tracking-tight text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]">
+      <section className="grid h-full grid-rows-[27%_33%_40%] px-7 pb-[118px] pt-[96px]">
+        {/* Bereich 1: Überschrift oben */}
+        <div className="flex flex-col justify-start pt-2">
+          <h1 className="text-[20px] font-semibold leading-tight tracking-tight text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.95)]">
             Hallo <span className="text-emerald-400">Alex</span>,
             <br />
             was hast du auf dem Herzen?
           </h1>
 
-          <p className="mt-2 text-[12px] leading-snug text-zinc-100 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+          <p className="mt-2 text-[12px] leading-snug text-zinc-100 drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)]">
             Dein Raum. Deine Gedanken. Deine Entwicklung.
           </p>
         </div>
 
-        {/* Voice Button */}
-        <div className="absolute left-7 right-7 top-[62%] -translate-y-1/2">
+        {/* Bereich 2: Voice-Button mittig */}
+        <div className="flex items-center justify-center">
           <VoiceButton />
         </div>
 
-        {/* Stimmung */}
-        <div className="absolute left-7 right-7 bottom-[178px]">
+        {/* Bereich 3: Stimmung, mit Luft zur Bottom-Navigation */}
+        <div className="flex items-start justify-center pt-3">
           <MoodSelector />
         </div>
-
       </section>
 
       <BottomNavigation active="start" />
