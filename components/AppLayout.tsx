@@ -1,8 +1,14 @@
 type AppLayoutProps = {
   children: React.ReactNode;
+  variant?: "home" | "default";
 };
 
-export default function AppLayout({ children }: AppLayoutProps) {
+export default function AppLayout({
+  children,
+  variant = "default",
+}: AppLayoutProps) {
+  const showDarkLayer = variant !== "home";
+
   return (
     <main className="h-dvh overflow-hidden bg-black text-white">
       <div
@@ -14,6 +20,10 @@ export default function AppLayout({ children }: AppLayoutProps) {
           backgroundRepeat: "no-repeat",
         }}
       >
+        {showDarkLayer && (
+          <div className="absolute inset-0 bg-black/65 backdrop-blur-[1px]" />
+        )}
+
         <div className="relative z-10 h-full">{children}</div>
       </div>
     </main>

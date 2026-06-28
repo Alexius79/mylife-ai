@@ -1,32 +1,75 @@
 const moods = [
-  { label: "Schlecht", color: "bg-red-500", border: "border-red-500/70" },
-  { label: "Geht so", color: "bg-orange-400", border: "border-orange-400/70" },
-  { label: "Gut", color: "bg-yellow-300", border: "border-yellow-300/70" },
-  { label: "Sehr gut", color: "bg-emerald-400", border: "border-emerald-400/70" },
+  {
+    label: "Schlecht",
+    color: "border-red-400 text-red-300",
+    dot: "bg-red-500",
+    delay: "2.55s",
+  },
+  {
+    label: "Geht so",
+    color: "border-orange-400 text-orange-300",
+    dot: "bg-orange-400",
+    delay: "2.7s",
+  },
+  {
+    label: "Gut",
+    color: "border-yellow-300 text-yellow-200",
+    dot: "bg-yellow-300",
+    delay: "2.85s",
+  },
+  {
+    label: "Sehr gut",
+    color: "border-emerald-400 text-emerald-300",
+    dot: "bg-emerald-400",
+    delay: "3s",
+  },
 ];
 
 export default function MoodSelector() {
   return (
-    <div className="mt-6">
-      <h2 className="text-[21px] font-bold text-emerald-400">
+    <div className="w-full">
+      <h2 className="animate-[fadeMood_0.65s_ease-out_2.35s_both] text-[21px] font-semibold leading-tight text-emerald-400 drop-shadow-[0_0_12px_rgba(52,211,153,0.45)]">
         Wie fühlst du dich gerade?
       </h2>
 
-      <div className="mt-3 grid grid-cols-4 gap-2">
+      <div className="mt-4 grid grid-cols-4 gap-3">
         {moods.map((mood) => (
           <button
             key={mood.label}
-            className={`h-[68px] rounded-2xl border ${mood.border} bg-white/[0.03]`}
+            className={`flex h-[78px] animate-[moodIn_0.45s_ease-out_both] flex-col items-center justify-center rounded-[18px] border bg-black/10 backdrop-blur-[1px] ${mood.color}`}
+            style={{ animationDelay: mood.delay }}
           >
-            <div className="flex h-full flex-col items-center justify-center">
-              <div className={`h-6 w-6 rounded-full ${mood.color}`} />
-              <div className="mt-2 text-[11px] font-semibold text-white">
-                {mood.label}
-              </div>
-            </div>
+            <span className={`h-7 w-7 rounded-full ${mood.dot}`} />
+            <span className="mt-3 text-[12px] font-semibold text-white">
+              {mood.label}
+            </span>
           </button>
         ))}
       </div>
+
+      <style>{`
+        @keyframes fadeMood {
+          from {
+            opacity: 0;
+            transform: translateY(8px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes moodIn {
+          from {
+            opacity: 0;
+            transform: translateY(12px) scale(0.92);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+      `}</style>
     </div>
   );
 }
