@@ -9,20 +9,20 @@ export default function Home() {
     <AppLayout>
       <Header />
 
-      <section className="flex h-full flex-col justify-end px-7 pb-[104px] pt-[88px]">
-        <div className="mb-5">
-          <h1 className="text-[24px] font-semibold leading-tight tracking-tight text-white">
+      <section className="flex h-full flex-col px-7 pb-[104px] pt-[92px]">
+        <div className="mt-[34vh]">
+          <h1 className="text-[22px] font-semibold leading-tight tracking-tight text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.65)]">
             Hallo <span className="text-emerald-400">Alex</span>,
             <br />
-            was hast du auf dem Herzen?
+            wie geht es dir heute?
           </h1>
 
-          <p className="mt-2 text-[12px] leading-snug text-zinc-300">
+          <p className="mt-2 text-[12px] leading-snug text-zinc-200 drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]">
             Dein Raum. Deine Gedanken. Deine Entwicklung.
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div className="mt-6 space-y-4">
           <VoiceButton />
           <MoodSelector />
         </div>
