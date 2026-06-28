@@ -7,7 +7,7 @@ type HeaderProps = {
 
 export default function Header({ subtitle }: HeaderProps) {
   return (
-    <header className="absolute left-0 right-0 top-0 z-30 px-7 pt-10">
+    <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/5 bg-black/45 px-7 pb-5 pt-10 backdrop-blur-2xl">
       <div className="flex items-start justify-between">
         <Link href="/" className="flex items-center gap-3">
           <LogoIcon className="h-8 w-8 text-emerald-400" />
@@ -27,7 +27,7 @@ export default function Header({ subtitle }: HeaderProps) {
 
         <Link
           href="/profile"
-          className="flex h-12 w-12 items-center justify-center rounded-full border border-emerald-400/80 bg-black/20 text-emerald-300"
+          className="flex h-12 w-12 items-center justify-center rounded-full border border-emerald-400/80 bg-black/30 text-emerald-300 backdrop-blur-xl transition-all duration-300 hover:bg-black/40"
         >
           <ProfileIcon className="h-7 w-7" />
         </Link>

@@ -28,7 +28,7 @@ export async function analyzeLifeEntryWithAI({
         {
           role: "system",
           content:
-            "Du bist die zentrale Analyse-KI von MyLife. Du analysierst persönliche Lebenseinträge ruhig, präzise und strukturiert. Antworte ausschließlich als valides JSON ohne Markdown.",
+            "Du bist die zentrale Analyse-KI von MyLife. Du wandelst persönliche Rohtexte in kurze, hilfreiche, menschliche Zusammenfassungen um. Du stellst nur Rückfragen, wenn sie wirklich wichtig sind. Antworte ausschließlich als valides JSON ohne Markdown.",
         },
         {
           role: "user",
@@ -59,13 +59,17 @@ Gib exakt dieses JSON-Schema zurück:
 }
 
 Regeln:
-- primaryCategoryId muss eine der verfügbaren Kategorien sein oder null.
+- summary ist NICHT Wiederholung des Originaltexts.
+- summary ist eine kurze, verdichtete Interpretation mit echtem Mehrwert.
+- summary maximal 160 Zeichen.
+- questions maximal 2 Rückfragen.
+- questions nur stellen, wenn wichtige Informationen fehlen.
+- Keine Diagnose stellen.
+- Bei Gesundheit neutral, vorsichtig und sachlich formulieren.
+- primaryCategoryId muss eine verfügbare Kategorie sein oder null.
 - relatedCategoryIds dürfen nur verfügbare Kategorien enthalten.
-- summary maximal 240 Zeichen.
-- questions maximal 3 konkrete Rückfragen.
 - statusDate im Format YYYY-MM-DD.
 - eventDate nur setzen, wenn ein Datum klar erkennbar ist.
-- Bei medizinischen Themen keine Diagnose stellen, nur neutral zusammenfassen.
           `.trim(),
         },
       ],
@@ -127,8 +131,8 @@ function normalizeAIAnalysis(
           .filter((question): question is string => typeof question === "string")
           .map((question) => question.trim())
           .filter(Boolean)
-          .slice(0, 3)
-      : fallbackAnalysis.questions,
+          .slice(0, 2)
+      : fallbackAnalysis.questions.slice(0, 2),
     importance,
     statusDate:
       typeof parsed.statusDate === "string" && parsed.statusDate.length >= 10
