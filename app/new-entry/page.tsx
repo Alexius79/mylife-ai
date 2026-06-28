@@ -1,3 +1,5 @@
+"use client";
+
 import { FormEvent, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import AppLayout from "@/components/AppLayout";
